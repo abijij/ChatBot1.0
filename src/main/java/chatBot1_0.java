@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class chatBot1_0 {
     final static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.println("Bienvenido al chat bot alpha 1.0 "+"\nComo puedo ayudarte?" +"\nQuieres saber como me llamo ?" );
+        System.out.println("""
+                Bienvenido al chat bot alpha 1.0\s
+                
+                Quieres saber como me llamo ?""");
         String pregunta = scanner.nextLine();
         if(pregunta.toString().contains("si")){
             System.out.println("Mi nombre es chat bot 1.0 , continuemos");
@@ -62,7 +65,6 @@ public class chatBot1_0 {
     }
     static  void  salir(){
         System.exit(0);
-
     }
     static  void factura(){
         Scanner scanner = new Scanner(System.in);
@@ -90,11 +92,9 @@ public class chatBot1_0 {
         String factura = "la factura " + nombreCFactura + "con un valor bruto total de " + precioTotal + ", con un impuesto de "+ impuesto + " dando un total de " +precioImpuesto;
 
         System.out.println(factura);
-
     }
     static  void codi(){
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Ingrese el nombre del primer familiar");
         String nombrea = scanner.nextLine();
         String nombreA2 = nombrea.toUpperCase().charAt(1) + "." + nombrea.substring(nombrea.length()-2);
@@ -110,7 +110,6 @@ public class chatBot1_0 {
         String resultado = nombreA2 + "_" + nombreB2 + "_" + nombreC2;
 
         System.out.println(resultado);
-
     }
     static  void pyn(){
         System.out.println("Escribe un número:");
@@ -137,22 +136,10 @@ public class chatBot1_0 {
 
         System.out.print("El area del Triangulo es:\t"+resultado);
     }
-
-    static void adivinador(){
-        System.out.println("Dejame adivinar tu edad");
-        System.out.println("Cual es el resultado de tu edad al dividirlo entre 3?:");
-        int resultado3 = scanner.nextInt();
-        System.out.println("Cual es el resultado de tu edad al dividirlo entre 5?:");
-        int resultado5 = scanner.nextInt();
-        System.out.println("Cual es el resultado de tu edad al dividirlo entre 7?:");
-        int resultado7 = scanner.nextInt();
-        int edad =(resultado3*70+resultado5*21+resultado7*15)%105;
-        System.out.println("Tu edad es: "+ edad);
-
-
-
+    public static void adivinador(){
+        AdivinarEdad obj = new AdivinarEdad();
+        obj.adivinar();
     }
-
     }
 
 
